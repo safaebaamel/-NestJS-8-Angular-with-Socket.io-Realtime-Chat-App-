@@ -1,0 +1,15 @@
+version: '3'
+services:  
+  postgres:
+    image: chatApp:13
+    container_name: chatApp
+    ports:
+       - "5439:5432"
+    environment:
+       - POSTGRES_PASSWORD=sophie
+       - POSTGRES_USER=postgres
+       - POSTGRES_DB=chatApp
+       - TZ="Europe/Zurich"
+    volumes:
+       - ../data:/var/lib/postgresql/data
+
